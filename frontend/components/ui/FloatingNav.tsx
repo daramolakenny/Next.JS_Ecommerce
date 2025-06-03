@@ -8,6 +8,12 @@ import {
 } from "motion/react";
 import { cn } from "@/utils/cn";
 
+// const navItems = [
+//   {id:1, name: "Home", link: "/", icon: JSX.Element | undefined},
+//   {id:2, name: "About", link: "/", icon: JSX.Element | undefined},
+//   {id:3, name: "Contact", link: "/", icon: JSX.Element | undefined},
+// ];
+
 
 export const FloatingNav = ({
   navItems,
@@ -60,20 +66,46 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {/* {navItems.map((navItem: any, idx: number) => ( */}
           <a
-            key={`link=${idx}`}
-            href={navItem.link}
+            // key={`link=${idx}`}
+            href={'/home'}
             className={cn(
               "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            <span className="hidden sm:block text-sm">Home</span>
+            {/* <span className="hidden sm:block text-sm">{navItem.name}</span> */}
           </a>
-        ))}
+          <a
+            // key={`link=${idx}`}
+            href={'#categories'}
+            className={cn(
+              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+            )}
+          >
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            <span className="hidden sm:block text-sm">Categories</span>
+            {/* <span className="hidden sm:block text-sm">{navItem.name}</span> */}
+          </a>
+          <a
+            // key={`link=${idx}`}
+            href={'#contract'}
+            className={cn(
+              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+            )}
+          >
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            <span className="hidden sm:block text-sm">Book a Contract</span>
+            {/* <span className="hidden sm:block text-sm">{navItem.name}</span> */}
+          </a>
+        {/* ))} */}
         <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <a href="/app/page.tsx"><span>Login</span></a>
+          <a href={'/'}><span>Login</span></a>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px b g-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button> 
       </motion.div>
