@@ -1,20 +1,16 @@
+require('dotenv').config;
+
 const express = require('express');
+const authRoutes = require('./routes/auth-route');
 
 const app = express();
-const port = 3000;
+const port=process.env.port;
 
-const password = "@Kenny2000$";
+// middleware
+app.use(express.json());
 
-app.get('/', (req, res) => {
-    if(password === "@Kenny2000$"){
-        res.redirect('/Home');
-    }
-})
-
-// app.post('/submit', (req, res) => {
-
-//     const enterPasword = req.body[fName]
-// });
+// auth routes
+app.use('/api/auth', authRoutes);
 
 app.listen(port, ()=> {
     console.log(`Server is Listerning on port ${port}`);
