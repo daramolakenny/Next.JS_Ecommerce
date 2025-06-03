@@ -6,12 +6,13 @@ import Footer from "@/components/Footer";
 import Food from "@/components/Food";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { FaHome } from "react-icons/fa";
+import ItemCategory from "@/components/ItemCategory";
 
 const page = () => {
   return (
     // <div className="flex relative bg-black  justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
     <div className="bg-black overflow-hidden sm:px-10">
-        <div className="">
+        <div className="w-full">
           <FloatingNav 
             className=""
             navItems={[
@@ -20,7 +21,7 @@ const page = () => {
           />
             <Hero />
             <FindProduct />
-            <Food />
+            <ItemCategory />
             <Footer />
         </div>
     </div>
