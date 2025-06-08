@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import Footer from "@/components/Footer";
-import {toast} from "react-toastify";
+
 // 
 export default function Home() {
   const router = useRouter();
@@ -19,24 +19,49 @@ export default function Home() {
     setFormLoading(true);
 
     try {
-      if(userName === ''){
-        Swal.fire('Please kindly fill the username!');
+      // const success = process.env.SUCCESS;
+      // const name = process.env.NAME;
+      const success = process.env.NEXT_PUBLIC_SUCCESS;
+      const name = process.env.NEXT_PUBLIC_NAME;
+      if(!userName){
+        setError("Please enter a username!");
+        Swal.fire("Please enter a username!", "", "warning");
         return;
-      } else if(password === ''){
-        Swal.fire('Please fill in your password!');
+      } else if(!password){
+        setError("Please fill in your password!");
+        Swal.fire("Please fill in your password!", "", "warning");
         return;
-      }
-      
-      const success = "@Kenny2000$";
-      if(password === success) {
-        Swal.fire({title: 'Login successfully!', icon: 'success'});
-        router.push('/home');
+      } else if(userName !== name) {
+        setError("Invalid username or password!");
+        Swal.fire({
+          title: "Invalid username or password!",
+          icon: "error",
+        });
+        return;
+      } else if(password !== success) {
+        setError("Invalid username or password!");
+        Swal.fire({
+          title: "Invalid username or password!",
+          icon: "error",
+        });
+        return;
       } else {
-        Swal.fire({title: 'Oops! something happened', icon: 'error',});
+        Swal.fire({
+          title: "Login successful!",
+          icon: "success",
+        });
+        router.push("/home");
       }
-    } catch (error) {
-      Swal.fire({title: 'Oops! something happened', icon: 'error',});
-    } finally { setFormLoading(false) }
+
+    } catch (err) {
+      setError("An unexpected error occurred!");
+      Swal.fire({
+        title: "Oops! Something went wrong",
+        icon: "error",
+      });
+    } finally {
+      setFormLoading(false);
+    }
   };
 
   return (
@@ -47,10 +72,10 @@ export default function Home() {
           <h1 className="font-bold text-3xl">Client Login</h1>
         </div>
         <form onSubmit={handleSubmit} className="w-full">
-          {error && <span style={{ color: "red" }}>{error}</span>}
           <p className="text-center text-sm text-gray-500 mb-4">
             Please enter your username and password to access the client dashboard.
           </p>
+          {error && <span className="text-red-500 ">{error}</span>}
           <div className="w-full max-w-[400px] mx-auto flex flex-col justify-start items-start gap-3 px-3">
             <div className="w-full">
               <label htmlFor="">Username: </label>
@@ -83,4 +108,4 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
+} 
