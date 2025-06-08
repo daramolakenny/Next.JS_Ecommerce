@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import dataMap from "@/data";
 import Link from "next/link";
+import Image from "next/image";
 
 // Define a type for the keys of dataMap
 type DataMapKeys = keyof typeof dataMap;
@@ -36,14 +37,14 @@ const ItemCategory = () => {
       <div className="w-full h-fit flex flex-row my-10 items-center justify-center">
         <div className="md:flex flex-wrap gap-10 mb-8 items-center justify-center text-white p-2 text-[1rem] font-medium md:max-w-[24rem ">
         {dataMap[active]?.length > 0 ? (
-          dataMap[active].map(({ id, icon, name, price, cart, url}) => (
+          dataMap[active].map(({ id, icon, name, price, cart}) => (
             <div key={id} className="block relative gap-4 md:max-w-[30rem] p-0.5">
               {/* Fix the href to match the dynamic route */}
               {/* <Link href={url}> */}
               <Link href={`/items/${id}`}>
                 <div className="relative rounded-br-4xl bg-orange-100 text-green-900 shadow flex flex-col min-h-[16rem] p-[2.4rem] cursor-pointer">
                   <div className="flex items-center transition ease-in-out hover:scale-120">
-                    <img src={icon} width={208} height={48} alt={name} />
+                    <Image src={icon} width={208} height={48} alt={name} />
                   </div>
                   <h2 className="mt-30 w-full">{name}</h2>
                   <div className="flex justify-between">

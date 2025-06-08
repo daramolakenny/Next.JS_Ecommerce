@@ -82,10 +82,12 @@
 import { useEffect, useState } from 'react';
 import { use } from 'react';
 import dataMap from '@/data';
+import Image from 'next/image';
 
 type ItemType = {
   id: number;
   name: string;
+  src: string;
   icon: string;
   price: string;
   cart: string;
@@ -108,7 +110,11 @@ export default function ItemDetailPage({ params }: { params: Promise<{ id: strin
       .flat()
       .find((item) => item.id === Number(id));
     console.log("foundItem:", foundItem); // Debug
-    setItem(foundItem || null);
+    if (foundItem) {
+      setItem({ ...foundItem, src: foundItem.icon });
+    } else {
+      setItem(null);
+    }
   }, [id]);
 
   if (!item) {
@@ -122,9 +128,11 @@ export default function ItemDetailPage({ params }: { params: Promise<{ id: strin
   return (
     <main className="min-h-screen bg-white px-4 py-20">
       <div className="max-w-[1200px] mx-auto rounded-lg shadow p-8 flex flex-col md:flex-row gap-10 bg-white">
-        <img
+        <Image
           src={item.icon}
           alt={item.name}
+          width={500}
+          height={500}
           className="w-full md:w-1/2 h-auto rounded-lg object-cover"
           loading="lazy"
         />

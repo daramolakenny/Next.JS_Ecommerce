@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import Footer from "@/components/Footer";
-
+// 
 export default function Home() {
   const router = useRouter();
   const [userName, setUserName] = useState('');
@@ -45,7 +45,9 @@ export default function Home() {
           {/* <img src={image} alt="" className="text-black"  /> */}
           <h1 className="font-bold text-3xl">Client Login</h1>
         </div>
-        {/* {error?} */}
+        {error && (
+          <div className="text-red-500 text-sm mb-4">{error}</div>
+        )}
         <form onSubmit={handleSubmit} className="w-full">
           <div className="w-full max-w-[400px] mx-auto flex flex-col justify-start items-start gap-3 px-3">
             <div className="w-full">
