@@ -53,7 +53,7 @@ export default function Home() {
         router.push("/home");
       }
 
-    } catch (err) {
+    } catch (_err) {
       setError("An unexpected error occurred!");
       Swal.fire({
         title: "Oops! Something went wrong",
