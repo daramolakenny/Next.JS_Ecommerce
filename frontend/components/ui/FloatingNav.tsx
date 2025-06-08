@@ -16,7 +16,7 @@ import { cn } from "@/utils/cn";
 
 
 export const FloatingNav = ({
-  navItems,
+  // navItems,
   className,
 }: {
   navItems: {
@@ -33,7 +33,8 @@ export const FloatingNav = ({
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      // let before i changed it to const
+      const direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(false);

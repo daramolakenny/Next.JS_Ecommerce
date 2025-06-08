@@ -18,7 +18,7 @@ type ItemType = {
 
 
 export default function Search({}) {
-    const [query, setQuery] = useState<String>("");
+    const [query, setQuery] = useState<string>("");
     const [result, setResult] = useState<ItemType[]>([]);
     const [notFound, setNotFound] = useState<boolean>(false);
     

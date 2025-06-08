@@ -2,7 +2,7 @@
 import { datacategories } from "@/data/index"
 
 
-type Datacategories = keyof typeof datacategories;
+// type Datacategories = keyof typeof datacategories;
 
 const Service = () => {
   return (
