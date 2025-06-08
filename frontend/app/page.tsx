@@ -9,20 +9,20 @@ export default function Home() {
   const router = useRouter();
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const [formLoading, setFormLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
+    // setError('');
     setFormLoading(true);
 
     try {
       if(userName === ''){
-        setError('Please kindly fill the username!');
+        Swal.fire('Please kindly fill the username!');
         return;
       } else if(password === ''){
-        setError('Please fill in your password!');
+        Swal.fire('Please fill in your password!');
         return;
       }
       
@@ -34,7 +34,7 @@ export default function Home() {
         Swal.fire({title: 'Oops! something happened', icon: 'error',});
       }
     } catch (error) {
-      setError("Failed to submit form");
+      Swal.fire({title: 'Oops! something happened', icon: 'error',});
     } finally { setFormLoading(false) }
   };
 
@@ -45,16 +45,16 @@ export default function Home() {
           {/* <img src={image} alt="" className="text-black"  /> */}
           <h1 className="font-bold text-3xl">Client Login</h1>
         </div>
-        {error && (
-          <div className="text-red-500 text-sm mb-4">{error}</div>
-        )}
         <form onSubmit={handleSubmit} className="w-full">
+          <p className="text-center text-sm text-gray-500 mb-4">
+            Please enter your username and password to access the client dashboard.
+          </p>
           <div className="w-full max-w-[400px] mx-auto flex flex-col justify-start items-start gap-3 px-3">
             <div className="w-full">
               <label htmlFor="">Username: </label>
-              <input 
+              <input
                 type="text"
-                value={userName} 
+                value={userName}
                 onChange={(e) => setUserName(e.target.value)}
                 className="setup-form-input p-2"
                 required 

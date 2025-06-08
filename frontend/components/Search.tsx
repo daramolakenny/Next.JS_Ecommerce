@@ -86,6 +86,12 @@ export default function Search({}) {
                     <SearchIcon />
                 </button>
             </form>
+
+            <div className="w-full max-w-[350px] mt-4">
+                {notFound && (
+                <p className="text-red-500 text-center font-medium">Not exist</p>
+                )} 
+            </div>
         </div>
     )
 }
