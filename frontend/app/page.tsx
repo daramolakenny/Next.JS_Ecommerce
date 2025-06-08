@@ -4,17 +4,18 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import Footer from "@/components/Footer";
+import {toast} from "react-toastify";
 // 
 export default function Home() {
   const router = useRouter();
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  // const [error, setError] = useState('');
+  const [error, setError] = useState('');
   const [formLoading, setFormLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // setError('');
+    setError('');
     setFormLoading(true);
 
     try {
@@ -46,6 +47,7 @@ export default function Home() {
           <h1 className="font-bold text-3xl">Client Login</h1>
         </div>
         <form onSubmit={handleSubmit} className="w-full">
+          {error && <span style={{ color: "red" }}>{error}</span>}
           <p className="text-center text-sm text-gray-500 mb-4">
             Please enter your username and password to access the client dashboard.
           </p>
