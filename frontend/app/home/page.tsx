@@ -1,15 +1,17 @@
 'use client'
 
+import React, { useState } from "react";
 import Hero from "@/components/Hero";
-import FindProduct from "@/components/FindProduct";
+import Search from "@/components/Search";
 import Footer from "@/components/Footer";
-// import Food from "@/components/Food";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { FaHome } from "react-icons/fa";
 import ItemCategory from "@/components/ItemCategory";
 import Bookevent from "@/components/Service";
 
 const page = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     // <div className="flex relative bg-black  justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
     <div className="bg-[#000319] overflow-hidden sm:px-10">
@@ -21,8 +23,8 @@ const page = () => {
             ]}
           />
             <Hero />
-            <FindProduct />
-            <ItemCategory />
+            <Search onSearch={setSearchQuery} />
+            <ItemCategory searchQuery={searchQuery}/>
             <Bookevent />
             <Footer />
         </div>
