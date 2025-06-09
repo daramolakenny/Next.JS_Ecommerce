@@ -6,14 +6,44 @@ import Image from "next/image";
 // Define a type for the keys of dataMap
 type DataMapKeys = keyof typeof dataMap;
 
-const ItemCategory = () => {
-  const [active, setActive] = useState<DataMapKeys>("Soup");
+interface ItemCategoryProps {
+  searchQuery: string;
+}
+
+const ItemCategory = ({searchQuery} : ItemCategoryProps) => {
+  const [active, setActive] = useState<DataMapKeys>("Dishes");
 
   useEffect(() => {
     console.log("dataMap:", dataMap);
     console.log("active category:", active);
     console.log("dataMap[active]:", dataMap[active]);
   }, [active]);
+
+  const getItemsToDisplay = () => {
+    if (!searchQuery) {
+      return dataMap[active] || [];
+    }
+
+    const queryLower = searchQuery.toLowerCase();
+    const matchedItems: any[] = [];
+
+    Object.entries(dataMap).forEach(([category, items]) => {
+      if (category.toLowerCase().includes(queryLower)) {
+        matchedItems.push(...items);
+      }
+      const matchingItems = items.filter((item) =>
+        item.name.toLowerCase().includes(queryLower)
+      );
+      matchedItems.push(...matchingItems);
+    });
+
+    // Remove duplicates based on item id
+    return Array.from(
+      new Map(matchedItems.map((item) => [item.id, item])).values()
+    );
+  };
+
+  const itemsToDisplay = getItemsToDisplay() || [];
 
   return (
     <div className="h-full">
@@ -35,32 +65,29 @@ const ItemCategory = () => {
       </div>
 
       <div className="w-full h-fit flex flex-row my-10 items-center justify-center">
-        <div className="md:flex flex-wrap gap-10 mb-8 items-center justify-center text-white p-2 text-[1rem] font-medium md:max-w-[24rem ">
-        {dataMap[active]?.length > 0 ? (
-          dataMap[active].map(({ id, icon, name, price, cart}) => (
-            <div key={id} className="block relative gap-4 md:max-w-[30rem] p-0.5">
-              {/* Fix the href to match the dynamic route */}
-              {/* <Link href={url}> */}
-              <Link href={`/items/${id}`}>
-                <div className="relative rounded-br-4xl bg-orange-100 text-green-900 shadow flex flex-col min-h-[16rem] p-[2.4rem] cursor-pointer">
-                  <div className="flex items-center transition ease-in-out hover:scale-120">
-                    <Image src={icon} width={208} height={48} alt={name} />
+        <div className="md:flex flex-wrap gap-10 mb-8 items-center justify-center text-white p-2 text-[1rem] font-medium md:max-w-[24rem">
+          {itemsToDisplay.length > 0 ? (
+            itemsToDisplay.map(({ id, icon, name, price, cart }) => (
+              <div key={id} className="block relative gap-4 md:max-w-[30rem] p-0.5">
+                <Link href={`/items/${id}`}>
+                  <div className="relative rounded-br-4xl bg-orange-100 text-green-900 shadow flex flex-col min-h-[16rem] p-[2.4rem] cursor-pointer">
+                    <div className="flex items-center transition ease-in-out hover:scale-120">
+                      <Image src={icon} width={208} height={48} alt={name} />
+                    </div>
+                    <h2 className="mt-30 w-full">{name}</h2>
+                    <div className="flex justify-between">
+                      <div>{price}</div>
+                      <button className="bg-green-700 text-white font-bold p-4 rounded-tl-full">
+                        {cart}
+                      </button>
+                    </div>
                   </div>
-                  <h2 className="mt-30 w-full">{name}</h2>
-                  <div className="flex justify-between">
-                    <div>{price}</div>
-                    <button className="bg-green-700 text-white font-bold p-4 rounded-tl-full">
-                      {cart}
-                    </button>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ))
-        ) : (
-          <p className="text-white text-center">No items found for {active}</p>
-        )}
-          
+                </Link>
+              </div>
+            ))
+          ) : (
+            <p className="text-white text-center">No items found</p>
+          )}
         </div>
       </div>
     </div>
@@ -68,3 +95,30 @@ const ItemCategory = () => {
 };
 
 export default ItemCategory;
+
+
+
+// {dataMap[active]?.length > 0 ? (
+//   dataMap[active].map(({ id, icon, name, price, cart}) => (
+//     <div key={id} className="block relative gap-4 md:max-w-[30rem] p-0.5">
+//       {/* Fix the href to match the dynamic route */}
+//       {/* <Link href={url}> */}
+//       <Link href={`/items/${id}`}>
+//         <div className="relative rounded-br-4xl bg-orange-100 text-green-900 shadow flex flex-col min-h-[16rem] p-[2.4rem] cursor-pointer">
+//           <div className="flex items-center transition ease-in-out hover:scale-120">
+//             <Image src={icon} width={208} height={48} alt={name} />
+//           </div>
+//           <h2 className="mt-30 w-full">{name}</h2>
+//           <div className="flex justify-between">
+//             <div>{price}</div>
+//             <button className="bg-green-700 text-white font-bold p-4 rounded-tl-full">
+//               {cart}
+//             </button>
+//           </div>
+//         </div>
+//       </Link>
+//     </div>
+//   ))
+// ) : (
+//   <p className="text-white text-center">No items found for {active}</p>
+// )}

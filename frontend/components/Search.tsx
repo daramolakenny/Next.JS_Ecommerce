@@ -1,71 +1,65 @@
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import dataMap from "@/data";
 
 interface SearchIconProps {
     size? : number,
     color? : string
+}
+interface SearchProps {
+    onSearch: (query: string) => void;
 }
 
 const SearchIcon = ({ size = 24, color = 'black' }: SearchIconProps) => (
   <FaSearch size={size} color={color} />
 );
 
-type ItemType = {
-    id: number;
-    name: string;
-}
+export default function Search({ onSearch }: SearchProps) {
+    const [query, setQuery] = useState("");
+    // const [result, setResult] = useState<ItemType[]>([]);
+    // const [notFound, setNotFound] = useState<boolean>(false);
 
-
-export default function Search({}) {
-    const [query, setQuery] = useState<string>("");
-    const [result, setResult] = useState<ItemType[]>([]);
-    const [notFound, setNotFound] = useState<boolean>(false);
-    
-    // const queryLower = query.toLowerCase();
-    // const matchSearch: ItemType[] = [];
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(e.target.value);
-        setNotFound(false);
-    }
+    // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     setQuery(e.target.value);
+    //     setNotFound(false);
+    // }
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
-        if(!query.trim()){
-            setResult([]);
-            setNotFound(false);
-            return;
-        }
+        onSearch(query);
+
+        // if(!query.trim()){
+        //     setResult([]);
+        //     setNotFound(false);
+        //     return;
+        // }
 
         // search by name or categories
-        const queryLower = query.toLowerCase();
-        const matchSearch: ItemType[] = [];
+        // const queryLower = query.toLowerCase();
+        // const matchSearch: ItemType[] = [];
 
-        Object.entries(dataMap).forEach(([category, items]) => {
-            // match category
-            if(category.includes(queryLower)) {
-                matchSearch.push(...items);
-            }
-            // match Items
-            const matchedItems = items.filter((item) => 
-                item.name.toLocaleLowerCase().includes(queryLower)
-            );
-            matchedItems.push(...matchedItems);
-        });
+        // Object.entries(dataMap).forEach(([category, items]) => {
+        //     // match category
+        //     if(category.includes(queryLower)) {
+        //         matchSearch.push(...items);
+        //     }
+        //     // match Items
+        //     const matchedItems = items.filter((item) => 
+        //         item.name.toLocaleLowerCase().includes(queryLower)
+        //     );
+        //     matchedItems.push(...matchedItems);
+        // });
 
         // Remove duplicates (in case an item matches both category and name)
         // const uniqueItems = Array.from(
             //     new Map(matchedItems.map((item) => [item.id, item])).values()
             //   );
 
-        console.log("Search Query:", query);
+        // console.log("Search Query:", query);
         // setResults(uniqueItems);
         // setNotFound(uniqueItems.length === 0);
         // console.log("Search query:", query, "Results:", uniqueItems);
     }
 
-  
 
     return (
         <div className="w-full flex items-center justify-center ">
@@ -74,7 +68,7 @@ export default function Search({}) {
                     type="text"
                     // value={query}
                     className="relative w-full bg-green-700 highlight-none setup-form-input px-2 py-3 font-bold text-white rounded-l-4xl focus:outline-none"
-                    onChange={handleChange}
+                    onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search..."
                 />
 
@@ -87,11 +81,11 @@ export default function Search({}) {
                 </button>
             </form>
 
-            <div className="w-full max-w-[350px] mt-4">
+            {/* <div className="w-full max-w-[350px] mt-4">
                 {notFound && (
                 <p className="text-red-500 text-center font-medium">Not exist</p>
                 )} 
-            </div>
+            </div> */}
         </div>
     )
 }
