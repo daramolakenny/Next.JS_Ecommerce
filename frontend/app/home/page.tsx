@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Hero from "@/components/Hero";
 import Search from "@/components/Search";
 import Footer from "@/components/Footer";
@@ -9,7 +9,7 @@ import { FaHome } from "react-icons/fa";
 import ItemCategory from "@/components/ItemCategory";
 import Bookevent from "@/components/Service";
 
-const page = () => {
+const Page = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -32,4 +32,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
