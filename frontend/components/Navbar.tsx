@@ -1,4 +1,3 @@
-import Search from "./Search";
 
 const link = [
     {
@@ -51,8 +50,6 @@ export default function Navbar() {
                         </li>
                     ))}
                 </ul>
-
-                <Search />
             </div>
         </header>
     );
