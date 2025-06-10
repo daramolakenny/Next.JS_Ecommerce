@@ -83,6 +83,7 @@ import { useEffect, useState } from 'react';
 import { use } from 'react';
 import dataMap from '@/data';
 import Image from 'next/image';
+import { useCounterStore } from '@/stores/Cartcounter';
 
 type ItemType = {
   id: number;
@@ -99,6 +100,10 @@ type ItemType = {
 export default function ItemDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const [item, setItem] = useState<ItemType | null>(null);
+
+  const count = useCounterStore((state) => state.count);
+  const increment = useCounterStore((state) => state.increment);
+  const decrement = useCounterStore((state) => state.decrement);
 
   useEffect(() => {
     console.log("params id:", id); // Debug
@@ -138,23 +143,35 @@ export default function ItemDetailPage({ params }: { params: Promise<{ id: strin
         />
         <section className="md:w-1/2 flex flex-col justify-center">
           <h1 className="text-5xl font-extrabold mb-4 text-gray-900">{item.name}</h1>
-          <p className="text-gray-600 text-lg mb-6">{item.price}</p>
-          <div className="flex gap-4">
-            <button
-              className="px-6 py-3 bg-black text-white rounded-md font-semibold transition hover:bg-gray-800"
-              onClick={() => alert('Order added!')}
-              aria-label={`Add ${item.name} to order`}
-            >
-              {item.Order}
-            </button>
-            <button
-              className="px-6 py-3 border border-gray-300 rounded-md font-semibold text-gray-700 transition hover:border-gray-400"
-              onClick={() => alert('Order removed!')}
-              aria-label={`Remove ${item.name} from order`}
-            >
-              {item.remove_order}
-            </button>
+          <p className="text-gray-600 text-lg mb-4">{item.price}</p>
+          <div className='flex flex-col pb-4'>
+            <label htmlFor="input quantity" className='mb-2'>Qty</label>
+            <p className='border w-25 pl-2 rounded'>{count}</p>
+            {/* < type="number" name='quantity' onChange={} value={count} className='w-20 pl-2 outline-2 rounded' /> */}
+            <div className="flex gap-2 pt-2">
+              <button
+                className="px-4.5 border border-gray-300 rounded-md font-semibold transition hover:bg-gray-800"
+                onClick={increment}
+              >
+                +
+              </button>
+              <button
+                onClick={decrement}
+                className="px-4.5 border border-gray-300 rounded-md font-semibold text-gray-700 transition hover:border-gray-400"
+              >
+                -
+              </button>
+            </div>
           </div>
+          <div className="flex gap-4">
+              <button
+                className="p-2 bg-black text-white rounded-md font-semibold transition hover:bg-gray-800"
+                onClick={() => alert('Order added!')}
+                aria-label={`Add ${item.name} to order`}
+              >
+                {item.Order}
+              </button>
+            </div>
         </section>
       </div>
     </main>

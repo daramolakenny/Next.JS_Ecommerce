@@ -42,6 +42,7 @@
 
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -55,11 +56,18 @@ const Hero = () => {
           
           {/* <Spotlight className="top-10 right-0 absolute h-[80vh] w-[50vw] max-w-full max-h-full" fill="red" />
 
-          <Spotlight className="top-28 left-80 max-w-full max-h-full h-[80vh] w-[50vw]" fill="blue" />
-        </div> */}
+          <Spotlight className="top-28 left-80 max-w-full max-h-full h-[80vh] w-[50vw]" fill="blue" /> */}
         </div>
 
-        <div className="flex justify-center w-full"> {/* Added w-full */}
+          <div className="flex w-full text-white justify-around -mt-20 ">
+            {/* <div> */}
+              {/* <img src="" alt="" /> */}
+              <h3>MOSNNY FOOD</h3>
+            {/* </div> */}
+            <div><i className=""></i> item(s) - N0.00</div>
+          </div>
+        <div className="flex justify-center w-full "> {/* Added w-full */}
+
           <div className="w-full max-w-[60vw] lg:max-w-[80vw] sm:max-w-2xl text-white"> {/* Adjusted max-w */}
             <h3 className="text-[20px] flex justify-center ">SO YUMMY</h3>
             <h2 className="text-6xl flex justify-center tracking-wide">Desserts</h2>

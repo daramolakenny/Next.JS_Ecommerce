@@ -1,3 +1,4 @@
+import { div } from "motion/react-client";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
@@ -23,24 +24,26 @@ export default function Search({ onSearch }: SearchProps) {
 
 
     return (
-        <div className="w-full flex items-center justify-center ">
-            <form action="" onSubmit={handleSearch} className="md:w-[350px] sm:w-[250px]">
-                <input 
-                    type="text"
-                    // value={query}
-                    className="relative w-full bg-green-700 highlight-none setup-form-input px-2 py-3 font-bold text-white rounded-l-4xl focus:outline-none"
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Search..."
-                />
+        <div className="w-full bg-gradient-to-r from-[#eeEED8] to-[#d00000cd] py-10">
+            <div className="flex items-center justify-center ">
+                <form action="" onSubmit={handleSearch} className="md:w-[350px] sm:w-[250px]">
+                    <input 
+                        type="text"
+                        // value={query}
+                        className="relative w-full bg-green-700 highlight-none setup-form-input px-2 py-3 font-bold text-white rounded-l-4xl focus:outline-none"
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Search..."
+                    />
 
-                <button 
-                    type="submit"
-                    className="absolute px-2 py-3 rounded-r-4xl shadow-2xl bg-yellow-100"
-                    aria-label="Search"   
-                >
-                    <SearchIcon />
-                </button>
-            </form>
+                    <button 
+                        type="submit"
+                        className="absolute px-2 py-3 rounded-r-4xl shadow-2xl bg-yellow-100"
+                        aria-label="Search"   
+                    >
+                        <SearchIcon />
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }

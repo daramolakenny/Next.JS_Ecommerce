@@ -10,7 +10,7 @@ interface Item {
   name: string;
   icon: string;
   price: string;
-  cart: string;
+  Order: string;
   url: string;
 }
 
@@ -78,18 +78,18 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
       <div className="w-full h-fit flex flex-row my-10 items-center justify-center">
         <div className="md:flex flex-wrap gap-10 mb-8 items-center justify-center text-white p-2 text-[1rem] font-medium md:max-w-[24rem">
           {itemsToDisplay.length > 0 ? (
-            itemsToDisplay.map(({ id, icon, name, price, cart }) => (
+            itemsToDisplay.map(({ id, icon, name, price, Order }) => (
               <div key={id} className="block relative gap-4 md:max-w-[30rem] p-0.5">
                 <Link href={`/items/${id}`}>
                   <div className="relative rounded-br-4xl bg-orange-100 text-green-900 shadow flex flex-col min-h-[16rem] p-[2.4rem] cursor-pointer">
                     <div className="flex items-center transition ease-in-out hover:scale-120">
                       <Image src={icon} width={208} height={48} alt={name} />
                     </div>
-                    <h2 className="mt-30 w-full">{name}</h2>
+                    <h2 className="mt-10 w-full">{name}</h2>
                     <div className="flex justify-between">
                       <div>{price}</div>
                       <button className="bg-green-700 text-white font-bold p-4 rounded-tl-full">
-                        {cart}
+                        {Order}
                       </button>
                     </div>
                   </div>
