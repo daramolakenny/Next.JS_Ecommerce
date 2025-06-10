@@ -24,7 +24,7 @@ export default function Search({ onSearch }: SearchProps) {
 
 
     return (
-        <div className="w-full bg-gradient-to-r from-[#eeEED8] to-[#d00000cd] py-10">
+        <div className="w-full bg-gradient-to-r from-[#eeEED8] to-[#d0000cd] py-10">
             <div className="flex items-center justify-center ">
                 <form action="" onSubmit={handleSearch} className="md:w-[350px] sm:w-[250px]">
                     <input 
