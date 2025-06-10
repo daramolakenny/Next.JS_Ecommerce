@@ -42,7 +42,6 @@
 
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -51,12 +50,6 @@ const Hero = () => {
           <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen max-w-full max-h-screen" fill="yellow" />
           <Spotlight className="top-10 -right-10 h-[80vh] w-[50vw] max-w-full max-h-full " fill="white" />
           <Spotlight className="top-28 left-80 max-w-full max-h-full h-[80vh] w-[50vw]" fill="green" />
-
-          
-          
-          {/* <Spotlight className="top-10 right-0 absolute h-[80vh] w-[50vw] max-w-full max-h-full" fill="red" />
-
-          <Spotlight className="top-28 left-80 max-w-full max-h-full h-[80vh] w-[50vw]" fill="blue" /> */}
         </div>
 
           <div className="flex w-full text-white justify-around -mt-20 ">
