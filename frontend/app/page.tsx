@@ -9,7 +9,7 @@ import { FaHome } from "react-icons/fa";
 import ItemCategory from "@/components/ItemCategory";
 import Bookevent from "@/components/Service";
 
-const page = () => {
+const Page = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -32,7 +32,7 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
 
 
 // "use client"
