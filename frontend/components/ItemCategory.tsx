@@ -58,16 +58,16 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
   const itemsToDisplay: Item[] = getItemsToDisplay();
 
   return (
-    <div className="h-full">
-      <div className="flex flex-col sm:flex-row justify-center shadow-white tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
+    <div className="h-full w-full">
+      <div className="flex flex-col bg-yellow-100 sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
         {Object.keys(dataMap).map((category) => (
           <button
             key={category}
             onClick={() => setActive(category as DataMapKeys)}
             className={`px-4 ${
               active === category
-                ? "border-b-4 border-white font-bold text-white"
-                : "text-yellow-100"
+                ? "border rounded-full bg-black px-2 py-1 border-white font-bold text-white"
+                : "text-black"
             }`}
           >
             {category}
@@ -75,7 +75,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
         ))}
       </div>
 
-      <div className="w-full h-fit flex flex-row my-10 items-center justify-center">
+      <div className="w-full bg-white h-fit flex flex-row my-10 items-center justify-center">
         <div className="md:flex flex-wrap gap-10 mb-8 items-center justify-center text-white p-2 text-[1rem] font-medium md:max-w-[24rem">
           {itemsToDisplay.length > 0 ? (
             itemsToDisplay.map(({ id, icon, name, price, Order }) => (
@@ -97,7 +97,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
               </div>
             ))
           ) : (
-            <p className="text-white text-center">No items found</p>
+            <p className="text-black pt-6 text-center">No items found</p>
           )}
         </div>
       </div>

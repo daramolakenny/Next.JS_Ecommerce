@@ -45,20 +45,14 @@ import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36 w-full"> {/* Added w-full */}
+    <div className="pb-20 pt-36 w-full max-w-[1020px] mx-auto bg-[#000319] px-16"> {/* Added w-full */}
         <div className="w-full">
           <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen max-w-full max-h-screen" fill="yellow" />
           <Spotlight className="top-10 -right-10 h-[80vh] w-[50vw] max-w-full max-h-full " fill="white" />
           <Spotlight className="top-28 left-80 max-w-full max-h-full h-[80vh] w-[50vw]" fill="green" />
         </div>
 
-          <div className="flex w-full text-white justify-around -mt-20 ">
-            {/* <div> */}
-              {/* <img src="" alt="" /> */}
-              <h3>MOSNNY FOOD</h3>
-            {/* </div> */}
-            <div><i className=""></i> item(s) - N0.00</div>
-          </div>
+         
         <div className="flex justify-center w-full "> {/* Added w-full */}
 
           <div className="w-full max-w-[60vw] lg:max-w-[80vw] sm:max-w-2xl text-white"> {/* Adjusted max-w */}
@@ -70,6 +64,10 @@ const Hero = () => {
               words="Indulge in our delicious, handcrafted desserts made with the freshest ingredients. Whether you crave rich chocolate, tangy fruit tarts, or creamy delights, we have something to satisfy every sweet tooth."
             />
           </div>
+
+          {/* <div>
+            <img src={} alt="" />
+          </div> */}
         </div>
     </div>
   )

@@ -1,56 +1,29 @@
-
-const link = [
-    {
-        id: 0,
-        title: 'Home',
-        href: '/home',
-    },
-    {
-        id: 1,
-        title: 'Product',
-        href: '/product',
-    },
-    {
-        id: 2,
-        title: 'About',
-        href: '/about',
-    },
-    {
-        id: 3,
-        title: 'Blog',
-        href: '/blog',
-    },
-    {
-        id: 4,
-        title: 'Contact Us',
-        href: '/contact'
-    },
-    {
-        id: 5,
-        title: 'cart',
-        href: '/cart'
-    }
-];
+import { link } from "@/data";
 
 // interface links = {''}[]
 
 export default function Navbar() {
 
     return (
-        <header className="">
-            <div>
-                <div>
-                    {/* <img src="" alt="" /> */}
+        <header className="flex justify-around bg-white my-4 p-6">
+                <div className="py-2 font-extrabold">
+                    Mossny <span>.NG</span>
                 </div>
                 
-                <ul>
-                    {link.map((item) => (
-                        <li key={item.id}>
-                            <a href={item.href}> {item.title} </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+                <div className="flex justify-around">
+                    <ul className="flex">
+                        {link.map((item) => (
+                            <li key={item.id} className="px-4 py-2">
+                                <a href={item.href} className=""> {item.title} </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="rounded-full bg-yellow-100 text-black font-bold items-center ml-10">
+                        {/* <span>icon</span> */}
+                        <button className="py-2 px-4">Login/Signup</button>
+                    </div>
+                </div>
         </header>
     );
 }

@@ -23,8 +23,10 @@ export default function Search({ onSearch }: SearchProps) {
 
 
     return (
-        <div className="w-full bg-gradient-to-r from-[#eeEED8] to-[#d0000cd] py-10">
-            <div className="flex items-center justify-center ">
+        <div className="w-full bg-white  py-10">
+            {/* bg-gradient-to-r from-[#eeEED8] to-[#d0000cd] */}
+            <div className="flex items-center justify-around ">
+                <h1 className="font-extrabold">All Offers from Cambridge Lagos Nigeria</h1>
                 <form action="" onSubmit={handleSearch} className="md:w-[350px] sm:w-[250px]">
                     <input 
                         type="text"

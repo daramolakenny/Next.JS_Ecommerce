@@ -114,3 +114,36 @@ export const ingredients = {
     {}
   ]
 }
+
+export const link = [
+  {
+      id: 0,
+      title: 'Home',
+      href: '/home',
+  },
+  {
+      id: 1,
+      title: 'Browse Menu',
+      href: '/menu',
+  },
+  {
+      id: 2,
+      title: 'Special Offers',
+      href: '/offer',
+  },
+  {
+      id: 3,
+      title: 'Restaurants',
+      href: '/restaurants',
+  }
+];
+
+export const discountoffer = [
+  {
+    id: 0,
+    title: "",
+    subtitle: "",
+    icon: "",
+    discount: -20
+  }
+];
