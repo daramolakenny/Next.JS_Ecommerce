@@ -59,7 +59,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
 
   return (
     <div className="h-full w-full">
-      <div className="flex flex-col bg-yellow-100 sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
+      <div className="flex flex-col bg-yellow-400 sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
         {Object.keys(dataMap).map((category) => (
           <button
             key={category}
@@ -67,7 +67,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
             className={`px-4 ${
               active === category
                 ? "border rounded-full bg-black px-2 py-1 border-white font-bold text-white"
-                : "text-black"
+                : "text-black font-bold"
             }`}
           >
             {category}
@@ -75,15 +75,15 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
         ))}
       </div>
 
-      <div className="w-full bg-white h-fit flex flex-row my-10 items-center justify-center">
+      <div className="w-full bg-white h-fit flex flex-row items-center justify-center">
         <div className="md:flex flex-wrap gap-10 mb-8 items-center justify-center text-white p-2 text-[1rem] font-medium md:max-w-[24rem">
           {itemsToDisplay.length > 0 ? (
-            itemsToDisplay.map(({ id, icon, name, price, Order }) => (
+            itemsToDisplay.slice(0, 8).map(({ id, icon, name, price, Order }) => (
               <div key={id} className="block relative gap-4 md:max-w-[30rem] p-0.5">
                 <Link href={`/items/${id}`}>
                   <div className="relative rounded-br-4xl bg-orange-100 text-green-900 shadow flex flex-col min-h-[16rem] p-[2.4rem] cursor-pointer">
                     <div className="flex items-center transition ease-in-out hover:scale-120">
-                      <Image src={icon} width={208} height={48} alt={name} />
+                      <Image src={icon} width={208} height={48} alt={name} className="" />
                     </div>
                     <h2 className="mt-10 w-full">{name}</h2>
                     <div className="flex justify-between">

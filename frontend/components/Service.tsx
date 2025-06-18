@@ -6,7 +6,7 @@ import { datacategories } from "@/data/index"
 
 const Service = () => {
   return (
-    <div className="w-full h-96 justify-center items-center flex flex-col" id="Service" style={{
+    <div className="w-full h-96 justify-center items-center flex flex-col pb-10" id="Service" style={{
         background: "url(/images/cabbage.jpg)",
         backgroundPosition: "center",
         backgroundSize: "center",

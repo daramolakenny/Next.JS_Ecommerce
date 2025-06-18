@@ -138,12 +138,67 @@ export const link = [
   }
 ];
 
-export const discountoffer = [
+export const discountoffers = [
   {
     id: 0,
-    title: "",
-    subtitle: "",
-    icon: "",
-    discount: -20
+    title: "Fruit Juice",
+    subtitle: "Refreshing and Healthy",
+    icon: "/images/fruit.jpg",
+    discount: -40,
+    Order: "Add to Cart"
+  },
+  {
+    id: 1,
+    title: "Egg Roll",
+    subtitle: "Delicious and Savory",
+    icon: "/images/egg.jpg",
+    discount: -20,
+    Order: "Add to Cart"
+  },
+  {
+    id: 2,
+    title: "Green Salad",
+    subtitle: "Fresh and Healthy",
+    icon: "/images/green.jpg",
+    discount: -30,
+    Order: "Add to Cart"
+  }
+];
+
+export const infor = [
+  {
+    id: 1,
+    text: "Monday:",
+    time: "8:00 AM - 3:00 AM"
+  },
+  {
+    id: 2,
+    text: "Tuesday:",
+    time: "8:00 AM - 3:00 AM"
+  },
+  {
+    id: 3,
+    text: "Wednesday:",
+    time: "8:00 AM - 3:00 AM"
+  },
+  {
+    id: 4,
+    text: "Thursday:",
+    time: "8:00 AM - 3:00 AM"
+  },
+  {
+    id: 5,
+    text: "Friday:",
+    time: "8:00 AM - 3:00 AM"
+  },
+  {
+    id: 6,
+    text: "Saturday:",
+    time: "8:00 AM - 3:00 AM"
+  },
+  {
+    id: 7,
+    text: "Sunday:",
+    time: "8:00 AM - 3:00 AM"
   }
 ];

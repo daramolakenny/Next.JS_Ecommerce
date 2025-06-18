@@ -10,6 +10,8 @@ import ItemCategory from "@/components/ItemCategory";
 import Bookevent from "@/components/Service";
 import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
+import Discountmeal from "@/components/Discountmeal";
+import Compinfor from "@/components/Compinfor";
 
 const Page = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,8 +30,10 @@ const Page = () => {
           /> */}
             <Hero />
             <Search onSearch={setSearchQuery} />
+            <Discountmeal discountoffer={[]} />
             <ItemCategory searchQuery={searchQuery}/>
             <Bookevent />
+            <Compinfor />
             <Footer />
         </div>
     </div>

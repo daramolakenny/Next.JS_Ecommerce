@@ -27,7 +27,7 @@ export default function Search({ onSearch }: SearchProps) {
             {/* bg-gradient-to-r from-[#eeEED8] to-[#d0000cd] */}
             <div className="flex items-center justify-around ">
                 <h1 className="font-extrabold">All Offers from Cambridge Lagos Nigeria</h1>
-                <form action="" onSubmit={handleSearch} className="md:w-[350px] sm:w-[250px]">
+                <form action="" onSubmit={handleSearch} className="md:w-[350px] sm:w-[250px] ">
                     <input 
                         type="text"
                         // value={query}
@@ -38,7 +38,7 @@ export default function Search({ onSearch }: SearchProps) {
 
                     <button 
                         type="submit"
-                        className="absolute px-2 py-3 rounded-r-4xl shadow-2xl bg-yellow-100"
+                        className="absolute px-2 py-3 rounded-r-4xl shadow-2xl bg-yellow-400"
                         aria-label="Search"   
                     >
                         <SearchIcon />

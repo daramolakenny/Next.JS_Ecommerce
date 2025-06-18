@@ -19,7 +19,7 @@ export default function Navbar() {
                         ))}
                     </ul>
 
-                    <div className="rounded-full bg-yellow-100 text-black font-bold items-center ml-10">
+                    <div className="rounded-full bg-[#000319] font-bold text-white items-center ml-10">
                         {/* <span>icon</span> */}
                         <button className="py-2 px-4">Login/Signup</button>
                     </div>
