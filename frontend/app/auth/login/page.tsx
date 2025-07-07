@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 
 // 
@@ -10,12 +11,12 @@ export default function Home() {
   const router = useRouter();
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const [formLoading, setFormLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('');
+    // setError('');
     setFormLoading(true);
 
     try {
@@ -24,22 +25,22 @@ export default function Home() {
       const success = process.env.NEXT_PUBLIC_SUCCESS || '@Kenny201$';
       const name = process.env.NEXT_PUBLIC_NAME || 'Daramola';
       if(!userName){
-        setError("Please enter a username!");
+        // setError("Please enter a username!");
         Swal.fire("Please enter a username!", "", "warning");
         return;
       } else if(!password){
-        setError("Please fill in your password!");
+        // setError("Please fill in your password!");
         Swal.fire("Please fill in your password!", "", "warning");
         return;
       } else if(userName !== name) {
-        setError("Invalid username or password!");
+        // setError("Invalid username or password!");
         Swal.fire({
           title: "Invalid username or password!",
           icon: "error",
         });
         return;
       } else if(password !== success) {
-        setError("Invalid username or password!");
+        // setError("Invalid username or password!");
         Swal.fire({
           title: "Invalid username or password!",
           icon: "error",
@@ -51,7 +52,7 @@ export default function Home() {
       }
 
     } catch {
-      setError("An unexpected error occurred!");
+      // setError("An unexpected error occurred!");
       Swal.fire({
         title: "Oops! Something went wrong",
         icon: "error",
@@ -66,13 +67,13 @@ export default function Home() {
       <section className="w-full max-w-[600px] mx-auto rounded shadow bg-white py-10">
         <div className="w-full flex justify-center items-center gap-4 mb-5">
           {/* <img src={image} alt="" className="text-black"  /> */}
-          <h1 className="font-bold text-3xl">Client Login</h1>
+          <h1 className="font-bold text-3xl">User Login</h1>
         </div>
         <form onSubmit={handleSubmit} className="w-full">
           <p className="text-center text-sm text-gray-500 mb-4">
             Please enter your username and password to access the client dashboard.
           </p>
-          {error && <span className="text-red-500 ">{error}</span>}
+          {/* {error && <span className="text-red-500 ">{error}</span>} */}
           <div className="w-full max-w-[400px] mx-auto flex flex-col justify-start items-start gap-3 px-3">
             <div className="w-full">
               <label htmlFor="">Username: </label>
@@ -99,10 +100,26 @@ export default function Home() {
               { formLoading ? (<i>Loading ...</i>) : "Login"}
             </button>
           </div>
+
+          {/* <div className='w-[80%] md:w-[60%] lg:w-[80%] mx-auto flex justify-evenly align-middle mt-[10px]'>
+                <div className='w-[100px] h-[1px] bg-gray-400 my-auto'></div>
+                <h2 className='text-[12px] text-gray-600'>Or</h2>
+                <div className='w-[100px] h-[1px] bg-gray-400 my-auto'></div>
+              </div> */}
+
+              <div className='mx-auto'>
+                {/* <h2 className='text-center text-[13px] font-semibold text-gray-700'>Don't have an account ? <a href="#" className='text-blue-500'>Sign up</a></h2> */}
+                <h2 className='text-center text-[13px] font-semibold text-gray-700'>Don't have an account ? 
+                  <Link href={"/Signup"} className='font-bold'>Sign up</Link>
+                </h2>
+                <Link href={"/"}>
+                  <h2 className='text-center text-[13px] font-bold'>Forgotten password</h2>
+                </Link>
+              </div>
         </form>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 } 

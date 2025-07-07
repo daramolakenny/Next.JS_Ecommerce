@@ -11,8 +11,8 @@ import { infor } from '@/data';
 const Compinfor = () => {
   return (
     <div className='w-full bg-white items-center justify-center py-10 text-black'>
-        <div className='flex flex-wrap md:max-w-[1220px] m-auto gap-6 rounded-2xl shadow-2xl'>
-            <div className='py-16 leading-8 px-6 md:w-[24.5rem]'>
+        <div className='flex flex-wrap md:max-w-[1220px] m-auto gap-6 rounded-2xl border border-slate-100 shadow-2xl'>
+            <div className='py-16 leading-8 px-6 md:w-[24.3rem]'>
                 <header className='font-bold text-2xl pb-4'>Delivery Information</header>
                 {infor.map((items, id) => (
                     <ul key={id} className='flex'>

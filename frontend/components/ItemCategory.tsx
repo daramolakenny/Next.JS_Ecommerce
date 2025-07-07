@@ -59,7 +59,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
 
   return (
     <div className="h-full w-full">
-      <div className="flex flex-col bg-yellow-400 sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
+      <div className="flex flex-col bg-gray-100 sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
         {Object.keys(dataMap).map((category) => (
           <button
             key={category}
@@ -88,7 +88,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
                     <h2 className="mt-10 w-full">{name}</h2>
                     <div className="flex justify-between">
                       <div>{price}</div>
-                      <button className="bg-green-700 text-white font-bold p-4 rounded-tl-full">
+                      <button className="bg-green-400 text-white font-bold p-4 rounded-tl-full">
                         {Order}
                       </button>
                     </div>

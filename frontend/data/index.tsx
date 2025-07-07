@@ -119,7 +119,29 @@ export const link = [
   {
       id: 0,
       title: 'Home',
-      href: '/home',
+      href: '/',
+  },
+  {
+      id: 1,
+      title: 'Special Offers',
+      href: '/offer',
+  },
+  {
+      id: 2,
+      title: 'Restaurants',
+      href: '/restaurants',
+  },
+  {
+      id: 3,
+      title: 'Track Order',
+      href: '/order',
+  }
+];
+export const links = [
+  {
+      id: 0,
+      title: 'Home',
+      href: '/',
   },
   {
       id: 1,
@@ -135,6 +157,11 @@ export const link = [
       id: 3,
       title: 'Restaurants',
       href: '/restaurants',
+  },
+  {
+      id: 4,
+      title: 'Track Order',
+      href: '/order',
   }
 ];
 

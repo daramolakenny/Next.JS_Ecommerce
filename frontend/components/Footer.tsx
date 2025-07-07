@@ -13,7 +13,7 @@ export default function Footer() {
                 {/* <div className="mt-30">{count}</div>
                 <button onClick={increment}>+</button>
                 <button onClick={decrement}>-</button> */}
-                <div className="w-full bg-yellow-100">
+                <div className="w-full bg-yellow-200">
                     <div className='md:w-[1220px] flex flex-wrap m-auto gap-6'>
                         <div className='py-16 leading-8 px-6 md:w-[24rem]'>
                             <header className='font-bold text-2xl pb-4'>MOSNNY</header>
@@ -27,9 +27,9 @@ export default function Footer() {
                         <div className='py-16 leading-8 px-6 md:w-[24.5rem]'>
                             <header className='font-bold'>Get Exclusive Deals in your inbox</header>
                             {/* this place will be a imported form */}
-                            <div className='flex pl-2 w-full bg-green-600 shadow-2xl rounded-2xl'>
-                                <input type="text" placeholder='youremail@gmail.com' className='pl-2 focus:outline-none text-white' />
-                                <button className='bg-green-700 text-white ml-[2.9rem] px-4 rounded-2xl '>Subscribe</button>
+                            <div className='flex pl-2 w-full bg-gray-300 shadow-2xl rounded-2xl'>
+                                <input type="text" placeholder='youremail@gmail.com' className='pl-2 focus:outline-none text-black' />
+                                <button className='bg-[#000319] text-white ml-[2.9rem] px-4 rounded-2xl '>Subscribe</button>
                             </div>
                             <p>we won't spam, read our <a href="#" className='border-b pb-0'>email policy</a></p>
                             <div className='flex'>

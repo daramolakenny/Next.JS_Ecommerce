@@ -12,7 +12,7 @@ interface DiscountOffer {
 const Discountmeal = ({ discountoffer }: { discountoffer: DiscountOffer[] }) => {
   return (
     <div className='w-full pt-4'>
-        <div className='flex flex-wrap gap-6 mb-4 border px-2'>
+        <div className='flex flex-wrap items-center justify-center gap-6 mb-4 border px-2'>
             {discountoffers.map((item) => (
             <div 
                 key={item.id} 
@@ -27,11 +27,11 @@ const Discountmeal = ({ discountoffer }: { discountoffer: DiscountOffer[] }) => 
                         ${item.discount}
                     </p>
                     <div className=' flex justify-between mt-[12rem] px-2'>
-                        <div>
-                            <h3 className='text-xl text-green-700 font-semibold'>{item.title}</h3>
-                            <p className='text-yellow-400'>{item.subtitle}</p>
+                        <div className='bg-yellow-200 rounded-lg'>
+                            <h3 className='text-xl text-green-400 text-center font-semibold'>{item.title}</h3>
+                            <p className='text-black font-bold'>{item.subtitle}</p>
                         </div>
-                        <div className='bg-green-700 text-white font-bold p-4 rounded-tl-full'>
+                        <div className='bg-green-400 text-white font-bold p-4 rounded-tl-full'>
                             {item.Order}
                         </div>
                     </div>

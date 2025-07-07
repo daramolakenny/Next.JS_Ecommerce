@@ -22,19 +22,20 @@ const Page = () => {
         <div className="w-full">
           <Topbar />
           <Navbar />
+          <Hero />
+          <Discountmeal discountoffer={[]} />
+          <Footer />
+          
           {/* <FloatingNav 
             className=""
             navItems={[
               {name: "Home", link: "/home", icon: <FaHome /> }
             ]}
           /> */}
-            <Hero />
-            <Search onSearch={setSearchQuery} />
-            <Discountmeal discountoffer={[]} />
-            <ItemCategory searchQuery={searchQuery}/>
-            <Bookevent />
-            <Compinfor />
-            <Footer />
+            {/* <Search onSearch={setSearchQuery} /> */}
+            {/* <ItemCategory searchQuery={searchQuery}/> */}
+            {/* <Bookevent /> */}
+            {/* <Compinfor /> */}
         </div>
     </div>
   )
