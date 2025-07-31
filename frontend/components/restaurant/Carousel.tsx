@@ -12,11 +12,11 @@ const Carousel = () => {
                 </div>
 
                 <div>
-                    <button className='absolute right-4 md:right-20 rounded-full p-2 bg-yellow-200' ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <button className='absolute right-4 md:right-20 rounded-full p-2 bg-[#FC8A06]' ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                     </button>
-                    <button className='absolute right-10 md:right-34 rounded-full p-2 bg-yellow-200' >
+                    <button className='absolute right-10 md:right-34 rounded-full p-2 bg-[#FC8A06]' >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                     </button>
@@ -28,12 +28,12 @@ const Carousel = () => {
                     <div className='flex justify-between'>
                         <div className='flex h-12 w-full'>
                             <div className='w-10 h-10 mr-2 rounded-4xl bg-amber-950'></div>
-                                <span className='bg-yellow-200 w-1 h-12 left-6'></span>
+                                <span className='bg-[#FC8A06] w-1 h-12 left-6'></span>
 
                             <div className='flex w-full py-0 justify-between'>
                                 <div className='flex flex-col pl-2 leading-5'>
                                     <span className=''>St Rome</span>
-                                    <span className=''>Festac Lagos</span>
+                                    <span className='text-[#FC8A06]'>Festac Lagos</span>
                                 </div>
 
                                 <div className='flex flex-col pl-2 leading-5'>
@@ -52,12 +52,12 @@ const Carousel = () => {
                     <div className='flex justify-between'>
                         <div className='flex h-12 w-full'>
                             <div className='w-10 h-10 mr-2 rounded-4xl bg-amber-950'></div>
-                                <span className='bg-yellow-200 w-1 h-12 left-6'></span>
+                                <span className='bg-[#FC8A06] w-1 h-12 left-6'></span>
 
                             <div className='flex w-full py-0 justify-between'>
                                 <div className='flex flex-col pl-2 leading-5'>
                                     <span className=''>St Rome</span>
-                                    <span className=''>Festac Lagos</span>
+                                    <span className='text-[#FC8A06]'>Festac Lagos</span>
                                 </div>
 
                                 <div className='flex flex-col pl-2 leading-5'>
@@ -76,12 +76,12 @@ const Carousel = () => {
                     <div className='flex justify-between'>
                         <div className='flex h-12 w-full'>
                             <div className='w-10 h-10 mr-2 rounded-4xl bg-amber-950'></div>
-                                <span className='bg-yellow-200 w-1 h-12 left-6'></span>
+                                <span className='bg-[#FC8A06] w-1 h-12 left-6'></span>
 
                             <div className='flex w-full py-0 justify-between'>
                                 <div className='flex flex-col pl-2 leading-5'>
                                     <span className=''>St Rome</span>
-                                    <span className=''>Festac Lagos</span>
+                                    <span className='text-[#FC8A06]'>Festac Lagos</span>
                                 </div>
 
                                 <div className='flex flex-col pl-2 leading-5'>

@@ -22,7 +22,7 @@ interface ItemCategoryProps {
 }
 
 const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
-  const [active, setActive] = useState<DataMapKeys>("Dishes");
+  const [active, setActive] = useState<DataMapKeys>("Offers");
 
   useEffect(() => {
     console.log("dataMap:", dataMap);
@@ -59,15 +59,15 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
 
   return (
     <div className="h-full w-full">
-      <div className="flex flex-col bg-gray-100 sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
+      <div className="flex flex-col bg-[#FC8A06] sm:flex-row justify-center tracking-wide py-4 sm:py-6 text-lg sm:text-2xl border-b-sky-100 gap-2 sm:gap-0">
         {Object.keys(dataMap).map((category) => (
           <button
             key={category}
             onClick={() => setActive(category as DataMapKeys)}
             className={`px-4 ${
               active === category
-                ? "border rounded-full bg-black px-2 py-1 border-white font-bold text-white"
-                : "text-black font-bold"
+                ? "rounded-full bg-[#03081F] font-bold text-white"
+                : "font-bold text-white"
             }`}
           >
             {category}
@@ -88,7 +88,7 @@ const ItemCategory = ({ searchQuery }: ItemCategoryProps) => {
                     <h2 className="mt-10 w-full">{name}</h2>
                     <div className="flex justify-between">
                       <div>{price}</div>
-                      <button className="bg-green-400 text-white font-bold p-4 rounded-tl-full">
+                      <button className="bg-[#f1f1f1] text-white font-bold p-4 rounded-tl-4xl">
                         {Order}
                       </button>
                     </div>

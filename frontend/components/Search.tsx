@@ -32,7 +32,7 @@ export default function Search({ onSearch }: SearchProps) {
                     <div className="md:w-[350px] sm:w-[250px] border-gray-400 relative rounded-2xl">
                         <input 
                             type="text"
-                            // value={query}
+                            value={query}
                             className="relative w-full highlight-none setup-form-input bg-gray-100 px-2 py-3 font-bold text-grey-100 rounded-l-4xl focus:outline-none"
                             onChange={(e) => setQuery(e.target.value)}
                             placeholder="Search..."

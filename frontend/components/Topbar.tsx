@@ -15,10 +15,10 @@ const Topbar = () => {
                     <span className='text-yellow-200'>Change Location</span>
                 </div>
                 <div className='ml-6'>
-                    <span className='rounded-bl-2xl bg-green-600 border-r-1 p-4.5'>ico</span>
-                    <span className='bg-green-600 border-r-1 p-4.5'>items</span>
-                    <span className='bg-green-600 border-r-1 p-4.5'>NG 90</span>
-                    <span className='rounded-br-2xl bg-green-600 p-4.5'>arrow icon</span>
+                    <span className='rounded-bl-2xl bg-[#028643] border-r-1 p-4.5'>ico</span>
+                    <span className='bg-[#028643] border-r-1 p-4.5'>items</span>
+                    <span className='bg-[#028643] border-r-1 p-4.5'>NG 90</span>
+                    <span className='rounded-br-2xl bg-[#028643] p-4.5'>arrow icon</span>
                 </div>
             </div>
         </div>
