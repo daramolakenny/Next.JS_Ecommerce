@@ -8,6 +8,7 @@ import Topbar from "@/components/Topbar";
 import Navbar from "@/components/restaurant/Navbar";
 import Compinfor from "@/components/Compinfor";
 import Carousel from "@/components/restaurant/Carousel";
+import Ordermenu from "@/components/Ordermenu";
 
 const Page = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -19,6 +20,7 @@ const Page = () => {
           <Navbar />
             <Hero />
             <Search onSearch={setSearchQuery} />
+            <Ordermenu searchQuery={searchQuery}/>
             <Compinfor />
             <Carousel />
             <Footer />

@@ -3,33 +3,22 @@ import React from 'react';
 export default function Footer() {
     const date = new Date().getFullYear();
 
-    // const count = UseCounterStore((state) => state.count);
-    // const increment = UseCounterStore((state) => state.increment);
-    // const decrement = UseCounterStore((state) => state.decrement);
-
     return (
         // <div>
             <footer className="w-full items-center justify-center">
-                {/* <div className="mt-30">{count}</div>
-                <button onClick={increment}>+</button>
-                <button onClick={decrement}>-</button> */}
-                <div className="w-full bg-yellow-200">
+                <div className="w-full bg-[#D9D9D9]">
                     <div className='md:w-[1220px] flex flex-wrap m-auto gap-6'>
                         <div className='py-16 leading-8 px-6 md:w-[24rem]'>
                             <header className='font-bold text-2xl pb-4'>MOSNNY</header>
                             <p>Company #5084221, Register with House of companies.</p>
                         </div>
 
-                            {/* <div className='md:w-[780px] gap-4 border border-white'></div>
-
-                            <div className='md:w-[310px] gap-4 border border-white'></div> */}
-
                         <div className='py-16 leading-8 px-6 md:w-[24.5rem]'>
                             <header className='font-bold'>Get Exclusive Deals in your inbox</header>
                             {/* this place will be a imported form */}
                             <div className='flex pl-2 w-full bg-gray-300 shadow-2xl rounded-2xl'>
                                 <input type="text" placeholder='youremail@gmail.com' className='pl-2 focus:outline-none text-black' />
-                                <button className='bg-[#000319] text-white ml-[2.9rem] px-4 rounded-2xl '>Subscribe</button>
+                                <button className='bg-[#FC8A06] text-white ml-[2.9rem] px-4 rounded-2xl '>Subscribe</button>
                             </div>
                             <p>we won't spam, read our <a href="#" className='border-b pb-0'>email policy</a></p>
                             <div className='flex'>
@@ -64,7 +53,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className='flex md:w-[1220px] m-auto justify-between text-sm text-gray-400 py-2'>
+                <div className='flex md:w-[1220px] m-auto justify-between bg-[#03081F] text-sm text-gray-400 py-2'>
                     <div className="sm:px-4 text-sm pt-2">
                         <p>© {date} FOODIE MOSNNY. All Right Reserved.</p>
                     </div>
