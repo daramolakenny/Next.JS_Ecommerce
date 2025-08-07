@@ -1,6 +1,7 @@
-import { discountoffers } from '@/data'
+import { homediscountoffers } from '@/data'
 
 interface DiscountOffer {
+//   order: string;
   id: number;
   title: string;
   subtitle: string;
@@ -8,11 +9,11 @@ interface DiscountOffer {
   discount: number;
 }
 
-const Discountmeal = ({ discountoffer }: { discountoffer: DiscountOffer[] }) => {
+const Discountmeal = ({ homediscountoffer }: { homediscountoffer: DiscountOffer[] }) => {
   return (
     <div className='w-full pt-4'>
         <div className='flex flex-wrap items-center justify-center gap-6 mb-4 border px-2'>
-            {discountoffers.map((item) => (
+            {homediscountoffer.map((item) => (
             <div 
                 key={item.id}  
                 className='block  h-full rounded-2xl w-20 md:h-[20rem] relative bg-no-repeat md:w-[26.5rem]' 
@@ -31,7 +32,7 @@ const Discountmeal = ({ discountoffer }: { discountoffer: DiscountOffer[] }) => 
                             <p className='text-white font-bold'>{item.subtitle}</p>
                         </div>
                         {/* <div className='bg-[#028643] text-white font-bold p-2 rounded-tl-4xl'>
-                            {item.Order}
+                            {item.order}
                         </div> */}
                     </div>
                 </div>

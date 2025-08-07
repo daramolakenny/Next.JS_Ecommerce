@@ -3,7 +3,7 @@ import React from 'react'
 const Topbar = () => {
   return (
     <div className='w-full'>
-        <div className='md:max-w-[1020px] flex mx-auto rounded-br-2xl'>
+        <div className='md:max-w-[1988px] text-[10px] justify-between flex mx-auto rounded-br-2xl'>
             <div className='flex py-2 text-white'>
                 <h3>Get 5% off your first order,</h3>
                 <span className='text-yellow-200'>Promo: ORDERS</span>

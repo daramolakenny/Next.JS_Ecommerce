@@ -11,8 +11,8 @@ const Carousel = () => {
                     <h1 className='text-2xl font-bold'>Customer Reviews</h1>
                 </div>
 
-                <div>
-                    <button className='absolute right-4 md:right-20 rounded-full p-2 bg-[#FC8A06]' ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <div className='px-6'>
+                    <button className='absolute right-4 md:right-20 rounded-full p-2  bg-[#FC8A06]' ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                     </button>

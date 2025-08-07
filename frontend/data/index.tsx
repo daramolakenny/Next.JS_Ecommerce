@@ -244,6 +244,33 @@ export const discountoffers = [
   }
 ];
 
+export const homediscountoffers = [
+  {
+    id: 0,
+    title: "Fruit Juice",
+    subtitle: "Refreshing and Healthy",
+    icon: "/images/fruit.jpg",
+    discount: -40,
+    order: "Add to Cart"
+  },
+  {
+    id: 1,
+    title: "Egg Roll",
+    subtitle: "Delicious and Savory",
+    icon: "/images/egg.jpg",
+    discount: -20,
+    order: "Add to Cart"
+  },
+  {
+    id: 2,
+    title: "Green Salad",
+    subtitle: "Fresh and Healthy",
+    icon: "/images/green.jpg",
+    discount: -30,
+    order: "Add to Cart"
+  }
+];
+
 export const infor = [
   {
     id: 1,
